@@ -9,7 +9,7 @@ import (
 
 var (
 	ErrStruct     = errors.New("args must be struct kind")
-	ErrDiffStruct = errors.New("can not compare two different struct")
+	ErrDiffStruct = errors.New("can not compare two different structs")
 )
 
 type (
