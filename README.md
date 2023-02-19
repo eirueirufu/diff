@@ -69,8 +69,8 @@ Here is an example template, it uses [template](https://pkg.go.dev/text/template
   - `name`: the field name.
   - `before`: the value before change.
   - `after`: the value after change.
-  - others: define in field tag, for example `diff:"alias=username,anyKey=anyVal"`
-- outer args like the `time` in example
+  - others in field: define in field tag, for example `diff:"alias=username,anyKey=anyVal"`
+- others: like the `time` in example
     ```go
     out, err := d.Exec(bf, af, map[string]interface{}{
         "time": time.UnixDate,
@@ -78,3 +78,9 @@ Here is an example template, it uses [template](https://pkg.go.dev/text/template
     ```
 
 Use `diff.New(diff.WithTmpl(myTmpl))` to define your template.
+
+## Field type
+
+Basic data types will be compared, such as: Int, Int8, Int16, Int32, Int64, Uint, Uint8, Uint16, Uint32, Uint64, Uintptr, String, Bool, Float32, Float64, Complex64, Complex128.
+Other data types will be ignored, such as: slice, map, chan, etc.
+
